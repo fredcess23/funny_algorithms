@@ -1,11 +1,12 @@
 package com.structures;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 class SearchObjArray {
 	
     public static void main(String [] args) {
-    
+        	
     	String [] sa = {"one", "two", "three", "four"};
         Arrays.sort(sa); //Ordena el array alfabeticamente (el orden natural).
         
@@ -32,18 +33,12 @@ class SearchObjArray {
         // Nueva busqueda, pasando el parametro rs a binarySearch(). Esta vez obtenemos la respuesta correcta, 2.
         System.out.println("one = " + Arrays.binarySearch(sa,"one",rs));
     }
- 
 }
 
-
 class ReSortComparator implements Comparator<String> { //Definimos el Comparator
-
 	@Override
 	public int compare(String a, String b) {
 		//Al cambiar el uso de los argumentos en la invocacion de compareTo(), obtenemos el orden invertido.
 		return  b.compareTo(a);
 	}
-
 }
-
-
