@@ -2,13 +2,13 @@ package com.structures;
 
 class BusquedaBinaria {
 	/**
-	 * Busca un valor numerico dentro de un arreglo numerico... previamente
-	 * ordenado usando el metodo de busqueda binaria
+	 * Busca un valor numerico dentro de un arreglo numerico... (previamente
+	 * ordenado) usando el metodo de busqueda binaria
 	 * 
 	 * @param arreglo con los elementos; dato a buscar
 	 * @return posicion del elemento buscado, en caso de no existir retorna -1
 	 */
-	public static int busquedaBinaria(int vector[], int dato) {
+	public static int busquedaBinaria(int vector[], int target) {
 		
 		int n = vector.length;
 		int centro; 
@@ -21,14 +21,15 @@ class BusquedaBinaria {
 			System.out.println("Nuevo centro " + centro);
 			System.out.println("valor en centro " + vector[centro] );
 
-			if (vector[centro] == dato)
+			if (vector[centro] == target)
 				return centro;
 			
-			else if (dato < vector[centro]) { //lado izquierdo, se mueve el limite superior
-				sup = centro - 1;
-			} else { //lado derecho, se mueve el limite inferior
+			else if (vector[centro] > target){ //lado derecho, se redefine el limite inferior
 				inf = centro + 1;
 			}
+			else //lado izquierdo, se redefine el limite superior
+				sup = centro - 1;		
+			
 		}
 		
 		return -1;
